@@ -1,0 +1,92 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  creationTimestamp: "2022-10-21T00:03:56Z"
+  name: starboard
+spec:
+  caveats: |
+    The plugin requires access to create Jobs and CustomResources.
+  description: "Starboard enables results from vulnerability scanners, workload auditors,\nand
+    configuration benchmark tests to be incorporated into Kubernetes CRDs\n(Custom
+    Resource Definitions) and from there, accessed through the \nKubernetes API. \n\nUsers
+    familiar with kubectl or with a dashboard tool like Octant can find\nsecurity
+    risk information at their fingertips.\n\n"
+  homepage: https://github.com/aquasecurity/starboard
+  platforms:
+  - bin: starboard
+    files:
+    - from: starboard
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        arch: amd64
+        os: darwin
+    sha256: f2207f6328337e558a9f076a82801be365b2210a446c1992df3cfd9e74b54562
+    uri: https://github.com/aquasecurity/starboard/releases/download/v0.15.8/starboard_darwin_x86_64.tar.gz
+  - bin: starboard
+    files:
+    - from: starboard
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        arch: amd64
+        os: linux
+    sha256: 4f147d7d555e3080b875d80a7b885c55e7025de25dc415511a18529f89e18c81
+    uri: https://github.com/aquasecurity/starboard/releases/download/v0.15.8/starboard_linux_x86_64.tar.gz
+  - bin: starboard.exe
+    files:
+    - from: starboard.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        arch: amd64
+        os: windows
+    sha256: b2bd3b6bb6192d80caeded033783eb20559018f8ac51433c5ee07683540ba106
+    uri: https://github.com/aquasecurity/starboard/releases/download/v0.15.8/starboard_windows_x86_64.zip
+  - bin: starboard
+    files:
+    - from: starboard
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        arch: arm64
+        os: darwin
+    sha256: ae2968a31550d8a5d075befd50d297069f209c1fe25c636f45d9f1438ca74e13
+    uri: https://github.com/aquasecurity/starboard/releases/download/v0.15.8/starboard_darwin_ARM64.tar.gz
+  - bin: starboard
+    files:
+    - from: starboard
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        arch: arm64
+        os: linux
+    sha256: b697e70d74503bc4df0cfd72dcb9c20c259f2aace20e4e424bf17281b2b5310c
+    uri: https://github.com/aquasecurity/starboard/releases/download/v0.15.8/starboard_linux_ARM64.tar.gz
+  - bin: starboard.exe
+    files:
+    - from: starboard.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        arch: arm64
+        os: windows
+    sha256: 42d6ed642c289725d65f0449f0d12ad781f8d7da8050ea92f70c5ae0abf5a36f
+    uri: https://github.com/aquasecurity/starboard/releases/download/v0.15.8/starboard_windows_ARM64.zip
+  shortDescription: Toolkit for finding risks in kubernetes resources
+  version: v0.15.8
+status:
+  source:
+    name: default
